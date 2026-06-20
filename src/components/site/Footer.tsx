@@ -1,45 +1,115 @@
 import { Link } from "@tanstack/react-router";
+import { Linkedin, Twitter, Youtube, Mail, ArrowRight, Instagram, Facebook } from "lucide-react";
+import { motion } from "framer-motion";
+
+const PinterestIcon = ({ className }: { className?: string }) => (
+  <svg 
+    className={className} 
+    viewBox="0 0 24 24" 
+    fill="currentColor" 
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.965 1.406-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.033-1.002 2.324-1.492 3.121 1.12.33 2.301.509 3.527.509 6.621 0 11.988-5.367 11.988-11.987C24.005 5.367 18.638 0 12.017 0z" />
+  </svg>
+);
 
 export function Footer() {
+  const socials = [
+    { icon: Linkedin, href: "#" },
+    { icon: Twitter, href: "#" },
+    { icon: Instagram, href: "#" },
+    { icon: Facebook, href: "#" },
+    { icon: PinterestIcon, href: "#" },
+    { icon: Youtube, href: "#" },
+    { icon: Mail, href: "#" },
+  ];
+
   return (
-    <footer className="mt-32 border-t border-white/5">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-4">
-        <div className="md:col-span-2">
-          <div className="flex items-center gap-2">
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-[oklch(0.72_0.18_295)] to-[oklch(0.45_0.22_295)]">
-              <span className="block h-2 w-2 rounded-full bg-white/90" />
-            </span>
-            <span className="font-display text-lg font-semibold">Bytespath</span>
+    <footer className="mt-32 border-t border-white/5 bg-background pb-12 pt-24 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid gap-16 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
+          <div className="space-y-8">
+            <Link to="/" className="flex items-center gap-2">
+              <img
+                src="/BYTESPATH.png"
+                alt="BYTESPATH"
+                className="h-9 w-auto rounded-lg shadow-lg shadow-primary/10"
+              />
+            </Link>
+            <div>
+              <h4 className="font-display text-sm font-semibold text-foreground mb-4">About Bytespath</h4>
+              <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+                Bytespath Global is an AI implementation company helping BFSI organizations adopt AI securely with the right foundation, consulting, deployment, governance and long-term support.
+              </p>
+            </div>
+            <div className="flex gap-5">
+              {socials.map(({ icon: Icon, href }, i) => (
+                <motion.a 
+                  key={i}
+                  href={href} 
+                  whileHover={{ y: -3, color: "var(--primary)" }}
+                  className="text-muted-foreground transition-colors"
+                >
+                  <Icon className="h-5 w-5" />
+                </motion.a>
+              ))}
+            </div>
           </div>
-          <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Secure intelligence for modern financial institutions. Built for Banking,
-            Insurance, Fintech and NBFC.
+
+          <div>
+            <h4 className="font-display text-sm font-semibold text-foreground tracking-tight">Company</h4>
+            <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
+              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">Vision & Mission</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">Founders</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Careers</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Blogs</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-sm font-semibold text-foreground tracking-tight">Legal & Security</h4>
+            <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
+              <li><Link to="/" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Terms of Use</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Security Practices</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Compliance</Link></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Governance</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-sm font-semibold text-foreground tracking-tight">Newsletter</h4>
+            <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
+              Subscribe to get the latest BFSI AI intelligence and updates.
+            </p>
+            <div className="mt-6">
+              <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.03] p-1.5 focus-within:border-primary/50 transition-colors">
+                <input 
+                  type="email" 
+                  placeholder="email@enterprise.com" 
+                  className="flex-1 bg-transparent px-3 text-sm outline-none placeholder:text-muted-foreground/50" 
+                />
+                <button className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors">
+                  <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-24 flex flex-col items-center justify-between gap-6 border-t border-white/5 pt-10 md:flex-row">
+          <p className="text-xs text-muted-foreground/60">
+            © 2026 Bytespath Global. All Rights Reserved. Enterprise-grade AI for BFSI.
           </p>
+          <div className="flex items-center gap-8 text-[10px] uppercase tracking-[0.2em] text-muted-foreground/40 font-semibold">
+            <span>Mumbai (HQ)</span>
+            <span className="h-1 w-1 rounded-full bg-white/10" />
+            <span>Austin (USA)</span>
+          </div>
         </div>
-        <div>
-          <div className="eyebrow mb-4">Navigate</div>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/capabilities" className="hover:text-foreground">Capabilities</Link></li>
-            <li><Link to="/case-studies" className="hover:text-foreground">Case Studies</Link></li>
-            <li><Link to="/about" className="hover:text-foreground">About</Link></li>
-            <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
-          </ul>
-        </div>
-        <div>
-          <div className="eyebrow mb-4">Focus</div>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>Banking</li>
-            <li>Insurance</li>
-            <li>Fintech</li>
-            <li>NBFC</li>
-          </ul>
-        </div>
-      </div>
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-2 border-t border-white/5 px-6 py-6 text-xs text-muted-foreground md:flex-row">
-        <span>© {new Date().getFullYear()} Bytespath Technologies. All rights reserved.</span>
-        <span className="tracking-[0.2em] uppercase text-[oklch(0.7_0.12_295)]">
-          BFSI · AI · Risk · Compliance · Security
-        </span>
       </div>
     </footer>
   );

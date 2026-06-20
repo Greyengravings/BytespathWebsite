@@ -1,41 +1,69 @@
 import { Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+
+const bytesPathLogoSrc = "/BYTESPATH.png";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/capabilities", label: "Capabilities" },
-  { to: "/case-studies", label: "Case Studies" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/about", label: "Company" },
+  { to: "/Newsroom", label: "Newsroom" },
 ] as const;
 
 export function Nav() {
+  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [navOpacity, setNavOpacity] = useState(0);
+  const [borderOpacity, setBorderOpacity] = useState(0);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 50);
+    
+    // Manual interpolation to avoid WAAPI monotonic errors
+    const opacity = Math.min(0.8, latest / 100);
+    const border = Math.min(0.1, latest / 100);
+    
+    setNavOpacity(opacity);
+    setBorderOpacity(border);
+  });
+
   return (
-    <header className="sticky top-4 z-50 mx-auto w-full max-w-6xl px-4">
-      <div className="flex items-center justify-between rounded-full border border-white/10 bg-[oklch(0.16_0.03_285_/_0.75)] px-4 py-2 backdrop-blur-xl">
-        <Link to="/" className="flex items-center gap-2 pl-2">
-          <span className="grid h-7 w-7 place-items-center rounded-full bg-gradient-to-br from-[oklch(0.72_0.18_295)] to-[oklch(0.45_0.22_295)] shadow-[0_0_24px_oklch(0.55_0.22_295_/_0.6)]">
-            <span className="block h-2 w-2 rounded-full bg-white/90" />
-          </span>
-          <span className="font-display text-lg font-semibold tracking-tight">Bytespath</span>
+    <header className="fixed top-0 z-50 w-full px-4 pt-4 transition-all duration-300">
+      <motion.div 
+        style={{ 
+          backgroundColor: `rgba(41, 33, 51, ${navOpacity})`,
+          borderColor: `rgba(255, 255, 255, ${borderOpacity})`,
+          backdropFilter: isScrolled ? "blur(12px)" : "none"
+        }}
+        className="mx-auto flex max-w-7xl items-center justify-between rounded-full border px-6 py-3"
+      >
+        <Link to="/" className="flex items-center gap-2">
+          <img
+            src={bytesPathLogoSrc}
+            alt="BYTESPATH"
+            className="h-8 w-auto rounded-md"
+          />
         </Link>
-        <nav className="hidden items-center gap-1 md:flex">
+
+        <nav className="hidden items-center gap-2 md:flex">
           {links.map((l) => (
             <Link
-              key={l.to}
+              key={l.label}
               to={l.to}
               activeOptions={{ exact: true }}
               activeProps={{ className: "text-foreground bg-white/[0.06]" }}
               inactiveProps={{ className: "text-muted-foreground hover:text-foreground" }}
-              className="rounded-full px-4 py-1.5 text-sm transition-colors"
+              className="rounded-full px-5 py-2 text-sm font-medium transition-colors"
             >
               {l.label}
             </Link>
           ))}
         </nav>
-        <Link to="/contact" className="btn-primary !py-2 !px-4 text-xs">
-          Schedule Consultation
+
+        <Link to="/contact" className="btn-primary !py-2.5 !px-6 text-sm">
+          Book Consultation
         </Link>
-      </div>
+      </motion.div>
     </header>
   );
 }
