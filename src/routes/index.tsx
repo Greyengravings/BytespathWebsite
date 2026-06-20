@@ -267,7 +267,10 @@ function Index() {
                 brightness-[0.7]
               "
             >
-              <source src="/herovideo.mp4" type="video/mp4" />
+              <source
+                src={`${import.meta.env.BASE_URL}herovideo.mp4`}
+                type="video/mp4"
+              />
             </motion.video>
 
             {/* DARK OVERLAY */}
@@ -1088,7 +1091,8 @@ function Index() {
             <div
               className="absolute inset-0 z-0 bg-cover bg-center"
               style={{
-                backgroundImage:"url('/circuit.png')"              }}
+                backgroundImage: `url(${import.meta.env.BASE_URL}circuit.png)`,
+              }}
             />
 
             {/* DARK GRADIENT FOR TEXT READABILITY */}

@@ -2,8 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
-const bytesPathLogoSrc = "/BYTESPATH.png";
-
+const bytesPathLogoSrc = `${import.meta.env.BASE_URL}BYTESPATH.png`;
 const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "Company" },

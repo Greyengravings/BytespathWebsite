@@ -33,8 +33,8 @@ export function Footer() {
           <div className="space-y-8">
             <Link to="/" className="flex items-center gap-2">
               <img
-                src="/BYTESPATH.png"
-                alt="BYTESPATH"
+              src={`${import.meta.env.BASE_URL}BYTESPATH.png`}
+              alt="BYTESPATH"
                 className="h-9 w-auto rounded-lg shadow-lg shadow-primary/10"
               />
             </Link>
