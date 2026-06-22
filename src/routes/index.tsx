@@ -320,7 +320,7 @@ function Index() {
                 opacity: useTransform(heroProgress, [0.82, 0.88], [1, 0]),
                 y: useTransform(heroProgress, [0.82, 0.88], [0, -20])
               }}
-              className="text-[clamp(3rem,8vw,7rem)] font-bold font-display leading-none text-white/30 mb-3 tracking-tight select-none"
+              className="text-[clamp(3rem,8vw,7rem)] font-bold font-display leading-none text-white mb-3 tracking-tight select-none"
             >
               We
             </motion.div>
@@ -343,21 +343,21 @@ function Index() {
                   y: useTransform(heroProgress, [0.85, 0.92], [20, 0]),
                 }}
               >
-                <span className="text-[clamp(3.6rem,9.6vw,8.4rem)] font-bold font-display leading-none tracking-tight text-white">
+                <span className="text-[clamp(3rem,9.6vw,8.4rem)] font-bold font-display leading-none tracking-tight text-white">
                    Secure AI
                 </span>
               </motion.div>
             </div>
 
             {/* Bottom Reveal Slot (Lower Line) */}
-            <div className="relative mt-4 h-[clamp(3.6rem,9.6vw,8.4rem)]">
+            <div className="relative mt-4 h-[clamp(3.6rem,9.6vw,17rem)] md:h-[clamp(3.6rem,9.6vw,8.4rem)]">
               {/* Initial State: AI solutions for BFSI. */}
               <motion.div
                 style={{
                   opacity: useTransform(heroProgress, [0.82, 0.88], [1, 0]),
                   y: useTransform(heroProgress, [0.82, 0.88], [0, -20])
                 }}
-                className="absolute inset-0 flex items-center justify-center text-[clamp(3rem,8vw,7rem)] font-bold font-display leading-none text-white tracking-tight select-none"
+                className="absolute inset-0 flex items-center justify-center text-[clamp(2.5rem,8vw,7rem)] font-bold font-display leading-[1.1] text-white tracking-tight select-none"
               >
                 AI solutions for BFSI.
               </motion.div>
@@ -370,7 +370,7 @@ function Index() {
                   y: useTransform(heroProgress, [0.88, 0.95], [20, 0]),
                 }}
               >
-                <span className="text-[clamp(3.6rem,9.6vw,8.4rem)] font-bold font-display leading-none tracking-tight text-white select-none whitespace-nowrap">
+                <span className="text-[clamp(2.5rem,9.6vw,8.4rem)] font-bold font-display leading-[1.1] tracking-tight text-white select-none whitespace-normal max-w-[90vw] md:max-w-none">
                   Solutions for <span style={{
                     background: "linear-gradient(135deg, #A78BFA 0%, #7B3FF2 50%, #5B21B6 100%)",
                     WebkitBackgroundClip: "text",
@@ -478,7 +478,7 @@ function Index() {
       </section>
 
       {/* BFSI INTELLIGENCE CENTER (EXISTING) */}
-      <section className="py-32 relative z-10">
+      <section className="py-20 relative z-10">
         <div className="container mx-auto px-6">
           <div className="grid items-center gap-16 lg:grid-cols-2">
             <div>
@@ -522,7 +522,7 @@ function Index() {
       </section>
 
       {/* INDUSTRY PILLARS SHOWCASE */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-radial-violet opacity-10" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -690,7 +690,7 @@ function Index() {
       </section>
 
       {/* CHALLENGES SECTION UPGRADE */}
-      <section className="py-32 bg-white/[0.01]">
+      <section className="py-20 bg-white/[0.01]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-24">
             <div className="eyebrow">The Challenges We Solve</div>
@@ -723,7 +723,7 @@ function Index() {
       </section>
 
 {/* SECURITY ARCHITECTURE */}
-<section className="py-40 relative overflow-hidden">
+<section className="py-24 relative overflow-hidden">
   <div className="container mx-auto px-6">
 
     <div className="mb-24 text-center">
@@ -739,7 +739,27 @@ function Index() {
       </p>
     </div>
 
-    <div className="relative flex justify-center items-center h-[850px]">
+    {/* Mobile View: Grid/List */}
+    <div className="grid grid-cols-1 gap-6 md:hidden">
+      {securityPillars.map((pillar) => (
+        <motion.div
+          key={pillar.id}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="card-panel p-8 text-center"
+        >
+          <div className="mx-auto mb-6 h-16 w-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+            <pillar.icon className="h-8 w-8" />
+          </div>
+          <h4 className="font-display text-xl font-semibold mb-4">{pillar.title}</h4>
+          <p className="text-sm text-muted-foreground leading-relaxed">{pillar.desc}</p>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* Desktop View: Circular Animation */}
+    <div className="relative hidden md:flex justify-center items-center h-[850px]">
 
       {/* OUTER ORBIT */}
       <motion.div
@@ -957,7 +977,7 @@ function Index() {
 </section>
 
       {/* PARTNERS SECTION (NEW) */}
-      <section className="py-32 border-t border-white/5">
+      <section className="py-20 border-t border-white/5">
         <div className="container mx-auto px-6 text-center">
           <div className="eyebrow">Ecosystem</div>
           <h2 className="mt-4 font-display text-4xl font-semibold">Trusted Technology <span className="text-gradient">Partners</span></h2>
@@ -983,7 +1003,7 @@ function Index() {
       </section>
 
       {/* TESTIMONIALS (NEW UPGRADE) */}
-      <section className="py-32 bg-white/[0.01]">
+      <section className="py-20 bg-white/[0.01]">
         <div className="container mx-auto px-6">
           <div className="mb-20 text-center">
             <div className="eyebrow">Client Success</div>
@@ -1024,9 +1044,9 @@ function Index() {
       </section>
 
       {/* NEWS SECTION (NEW UPGRADE) */}
-      <section className="py-32">
+      <section className="py-20">
         <div className="container mx-auto px-6">
-          <div className="mb-20 flex flex-col md:flex-row items-end justify-between gap-6">
+          <div className="mb-20 flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
             <div>
               <div className="eyebrow">Newsroom</div>
               <h2 className="mt-4 font-display text-4xl font-semibold md:text-6xl">We <span className="text-gradient">Featured</span></h2>
@@ -1071,7 +1091,7 @@ function Index() {
       </section>
 
       {/* CTA SECTION UPGRADE */}
-      <section className="py-32 relative">
+      <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -1215,23 +1235,35 @@ function ProcessCard({ card, index, total, progress }: { card: any; index: numbe
     [10, 20, 10]
   );
 
+  const rotate = useTransform(
+    progress,
+    [centerPoint - segment, centerPoint, centerPoint + segment],
+    [-5, 0, 5]
+  );
+
   return (
     <motion.div
       style={{
         left: "50%",
         x: isMobile ? 0 : x,
         translateX: isMobile ? "-50%" : "-50%",
-        opacity,
+        opacity: isMobile ? 1 : opacity,
         scale,
-        zIndex
+        zIndex,
+        rotateY: isMobile ? 0 : rotate,
+        perspective: 1000
       }}
-      className="absolute top-1/2 -translate-y-1/2 min-w-[320px] md:w-[420px] rounded-[2rem] border border-white/5 bg-panel p-8 md:p-10 flex flex-col items-start text-left group overflow-hidden transition-colors duration-500 hover:border-primary/30"
+      className={`absolute top-1/2 -translate-y-1/2 min-w-[320px] md:w-[420px] rounded-[2rem] border border-white/5 ${isMobile ? 'bg-[#1a1620]' : 'bg-panel'} p-8 md:p-10 flex flex-col items-start text-left group overflow-hidden transition-colors duration-500 hover:border-primary/30`}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10 w-full">
-        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5 text-primary mb-8 border border-primary/10 shadow-inner">
+        <motion.div 
+          animate={isMobile ? {} : { y: [0, -5, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+          className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/5 text-primary mb-8 border border-primary/10 shadow-inner"
+        >
           <card.icon className="h-7 w-7" />
-        </div>
+        </motion.div>
         <div className="text-[10px] uppercase tracking-[0.3em] text-primary/80 font-bold mb-4">Phase 0{index + 1}</div>
         <h3 className="font-display text-2xl md:text-3xl font-semibold mb-6 tracking-tight">{card.title}</h3>
         <p className="text-sm md:text-base leading-relaxed text-muted-foreground/80 font-light">{card.desc}</p>
