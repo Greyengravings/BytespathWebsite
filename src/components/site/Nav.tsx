@@ -63,13 +63,14 @@ export function Nav() {
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Link to="/contact" className="btn-primary !py-2 !px-5 text-xs font-bold">
-              Book Consultation
-            </Link>
-          </div>
-
+          <div className="hidden md:block translate-x-3">
+  <Link
+    to="/contact"
+    className="btn-primary !py-2 !px-5 text-xs font-bold"
+  >
+    Book Consultation
+  </Link>
+</div>
           {/* Mobile Menu Button */}
           <button 
             className="flex h-9 w-9 items-center justify-center rounded-full text-white md:hidden"
