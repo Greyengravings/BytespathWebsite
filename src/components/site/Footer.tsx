@@ -15,12 +15,12 @@ const PinterestIcon = ({ className }: { className?: string }) => (
 
 export function Footer() {
   const socials = [
-    { icon: Linkedin, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Facebook, href: "#" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/bytespathglobal/" },
+    { icon: Twitter, href: "https://x.com/bytespath" },
+    { icon: Instagram, href: "https://www.instagram.com/bytespathglobal" },
+    { icon: Facebook, href: "https://www.facebook.com/bytespath/" },
     { icon: PinterestIcon, href: "#" },
-    { icon: Youtube, href: "#" },
+    { icon: Youtube, href: "https://www.youtube.com/@bytespath" },
     { icon: Mail, href: "#" },
   ];
 
@@ -35,7 +35,7 @@ export function Footer() {
               <img
               src={`${import.meta.env.BASE_URL}BYTESPATH.png`}
               alt="BYTESPATH"
-                className="h-9 w-auto rounded-lg shadow-lg shadow-primary/10"
+                className="h-9 w-auto rounded-lg shadow-lg shadow-primary/1"
               />
             </Link>
             <div>
@@ -72,8 +72,9 @@ export function Footer() {
           <div>
             <h4 className="font-display text-sm font-semibold text-foreground tracking-tight">Legal & Security</h4>
             <ul className="mt-6 space-y-4 text-sm text-muted-foreground">
-              <li><Link to="/" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/" className="hover:text-primary transition-colors">Terms of Use</Link></li>
+              <li><Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/cookies-policy" className="hover:text-primary transition-colors">Cookies Policy</Link></li>
+              <li><Link to="/terms-and-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
               <li><Link to="/" className="hover:text-primary transition-colors">Security Practices</Link></li>
               <li><Link to="/" className="hover:text-primary transition-colors">Compliance</Link></li>
               <li><Link to="/" className="hover:text-primary transition-colors">Governance</Link></li>
