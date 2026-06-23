@@ -25,21 +25,21 @@ export const Route = createFileRoute("/about")({
 const founders = [
   {
     name: "Aniket Singh",
-    role: "Co-Founder",
-    bio: "Visionary leader with a passion for transformative technology in the financial sector.",
-    image: "https://i.pravatar.cc/300?u=aniket",
+    role: "Co-Founder & CEO",
+    bio: "Aniket Singh is the Co-Founder and CEO of Bytespath Global, leading the company’s mission to transform businesses through innovation, digital solutions, and cutting-edge technology. With a deep passion for technology, Aniket has spearheaded multiple initiatives in AI, software development, digital transformation, and international payment systems, positioning Bytespath as a trusted partner for enterprises across industries. His leadership is defined by a combination of strategic foresight, operational excellence, and a commitment to building sustainable, future-ready businesses.",
+    image: `${import.meta.env.BASE_URL}aniket.jpeg`,  
   },
   {
     name: "Hitesh Nihalani",
-    role: "Co-Founder",
-    bio: "Strategic technologist focused on architecting secure and scalable AI foundations.",
-    image: "https://i.pravatar.cc/300?u=hitesh",
+    role: "Co-Founder & CTO",
+    bio: "Mr. Hitesh Nihlani is the Co-Founder and Chief Technical Officer (CTO) of Bytespath Solutions, responsible for steering the company’s financial strategy, planning, and growth initiatives. With a strong focus on financial discipline, strategic investment, and sustainable growth, Hitesh ensures that Bytespath maintains a robust and scalable business model. He plays a pivotal role in financial planning, managing budgets, and investor relations, enabling the company to achieve its growth objectives while maintaining operational efficiency and sound governance.",
+    image: `${import.meta.env.BASE_URL}hitesh.jpeg`,
   },
   {
     name: "Aditya Aher",
-    role: "Co-Founder",
-    bio: "Expert in engineering excellence and deploying high-performance intelligence systems.",
-    image: "https://i.pravatar.cc/300?u=aditya",
+    role: "Co-Founder & COO",
+    bio: "Mr. Aditya Aher is the Co-Founder and Chief Operating Officer (COO) of Bytespath Solutions, driving operational excellence, strategic execution, and client delivery across the organization. With a sharp focus on efficiency, scalability, and high-quality service delivery, Aditya ensures that Bytespath consistently meets and exceeds client expectations. He plays a key role in streamlining operations, managing global client engagements, and implementing best-in-class processes across all business functions. His leadership blends strategic vision with hands-on operational expertise, enabling Bytespath to deliver complex solutions seamlessly and at scale.",
+    image: `${import.meta.env.BASE_URL}aditya.jpeg`,
   },
 ];
 
