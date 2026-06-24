@@ -28,7 +28,6 @@ function Contact() {
 
             {/* LEFT COLUMN */}
             <div>
-
               <div className="eyebrow">Contact</div>
 
               <h1 className="mt-4 font-display text-5xl font-semibold leading-[1.05] md:text-6xl">
@@ -82,94 +81,35 @@ function Contact() {
             </div>
 
             {/* RIGHT COLUMN */}
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
-              className="card-panel p-8 space-y-5"
-            >
-              <div className="grid gap-5 md:grid-cols-2">
+            <div className="card-panel p-6 md:p-8">
+              <div className="mb-8">
+                <div className="eyebrow mb-3">
+                  Consultation Request
+                </div>
 
-                <Field label="Full Name *">
-                  <input
-                    required
-                    className="ipt"
-                    placeholder="Your Good Name"
-                  />
-                </Field>
+                <h2 className="font-display text-3xl font-semibold">
+                  Tell us about your Query
+                </h2>
 
-                <Field label="Work Email *">
-                  <input
-                    required
-                    type="email"
-                    className="ipt"
-                    placeholder="name@organization.com"
-                  />
-                </Field>
-
-                <Field label="Company *">
-                  <input
-                    required
-                    className="ipt"
-                    placeholder="Name of Organization"
-                  />
-                </Field>
-
-                <Field label="Role">
-                  <input
-                    className="ipt"
-                    placeholder="Designation"
-                  />
-                </Field>
-
-                <Field label="Organization Type">
-                  <select className="ipt">
-                    <option>Banking</option>
-                    <option>Insurance</option>
-                    <option>Fintech</option>
-                    <option>NBFC</option>
-                    <option>Other</option>
-                  </select>
-                </Field>
-
-                <Field label="Area of Interest">
-                  <select className="ipt">
-                    <option>Fraud & Risk</option>
-                    <option>Compliance Technology</option>
-                    <option>AI / ML</option>
-                    <option>Digital Transformation</option>
-                    <option>Data Platforms</option>
-                    <option>Other</option>
-                  </select>
-                </Field>
-
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                  Complete the secure consultation form below. A BFSI strategy lead will
+                  review your request and respond within one business day.
+                </p>
               </div>
 
-              <Field label="What would you like to discuss?">
-                <textarea
-                  rows={5}
-                  className="ipt resize-none"
-                  placeholder="A few sentences on the outcome you want."
+              <div className="rounded-3xl border border-white/10 overflow-hidden">
+                <iframe
+                  src="https://tally.so/embed/n9KeJV?hideTitle=1&transparentBackground=1"
+                  width="100%"
+                  height="800"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="Bytespath Consultation Form"
+                  className="block w-full"
                 />
-              </Field>
-
-              <div className="flex items-center justify-between border-t border-white/5 pt-5">
-                <span className="text-xs text-muted-foreground">
-                  We respond within one business day.
-                </span>
-
-                <button
-                  type="submit"
-                  className="btn-primary"
-                >
-                  {sent
-                    ? "Message sent ✓"
-                    : "Schedule Consultation"}
-                </button>
               </div>
-            </form>
-
+            </div>
           </div>
         </div>
       </section>
