@@ -50,10 +50,10 @@ function Contact() {
                   </div>
 
                   <a
-                    href="mailto:info@bytespath.com"
+                    href="mailto:info@bytespath.in"
                     className="mt-2 block text-base hover:text-primary transition-colors"
                   >
-                    info@bytespath.com
+                    info@bytespath.in
                   </a>
                 </div>
 
@@ -101,7 +101,7 @@ function Contact() {
                 <iframe
                   src="https://tally.so/embed/n9KeJV?hideTitle=1&transparentBackground=1"
                   width="100%"
-                  height="800"
+                  height="850"
                   frameBorder="0"
                   marginHeight={0}
                   marginWidth={0}

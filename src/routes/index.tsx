@@ -168,8 +168,23 @@ const partners = [
 ];
 
 const newsroom = [
-  { publication: "Economic Times", headline: "Bytespath recognized as top AI Fintech partner for 2025", date: "March 12, 2025", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" },
-  { publication: "BFSI Insight", headline: "The Future of AI Governance in Banking: A Deep Dive with Bytespath", date: "Feb 28, 2025", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" }
+  {
+    publication: "Hindustan Metro",
+    headline:
+      "Bytespath Solutions Announces Expansion into the United States Market",
+    date: "Latest",
+    image: `${import.meta.env.BASE_URL}map.png`, // replace with your image
+    link:"https://hindustanmetro.com/bytespath-solutions-announces-expansion-into-the-united-states-market",
+  },
+  {
+    publication: "Bytespath Intelligence",
+    headline:
+      "The Future of AI Governance in Financial Services",
+    date: "Coming Soon",
+    image:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+    link: "/newsroom",
+  },
 ];
 
 function Counter({ value, suffix = "" }: { value: string; suffix?: string }) {

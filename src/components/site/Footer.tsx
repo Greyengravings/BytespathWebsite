@@ -22,9 +22,7 @@ export function Footer() {
     { icon: Twitter, href: "https://x.com/bytespath" },
     { icon: Instagram, href: "https://www.instagram.com/bytespathglobal" },
     { icon: Facebook, href: "https://www.facebook.com/bytespath/" },
-    { icon: PinterestIcon, href: "#" },
     { icon: Youtube, href: "https://www.youtube.com/@bytespath" },
-    { icon: Mail, href: "#" },
   ];
   const handleNewsletterSignup = async () => {
   if (!email) return;

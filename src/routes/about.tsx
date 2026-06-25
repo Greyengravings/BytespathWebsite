@@ -26,13 +26,13 @@ const founders = [
   {
     name: "Aniket Singh",
     role: "Co-Founder & CEO",
-    bio: "Aniket Singh is the Co-Founder and CEO of Bytespath Global, leading the company’s mission to transform businesses through innovation, digital solutions, and cutting-edge technology. With a deep passion for technology, Aniket has spearheaded multiple initiatives in AI, software development, digital transformation, and international payment systems, positioning Bytespath as a trusted partner for enterprises across industries. His leadership is defined by a combination of strategic foresight, operational excellence, and a commitment to building sustainable, future-ready businesses.",
+    bio: "Mr. Aniket Singh is the Co-Founder and CEO of Bytespath Global, leading the company’s mission to transform businesses through innovation, digital solutions, and cutting-edge technology. With a deep passion for technology, Aniket has spearheaded multiple initiatives in AI, software development, digital transformation, and international payment systems, positioning Bytespath as a trusted partner for enterprises across industries. His leadership is defined by a combination of strategic foresight, operational excellence, and a commitment to building sustainable, future-ready businesses.",
     image: `${import.meta.env.BASE_URL}aniket.jpeg`,  
   },
   {
     name: "Hitesh Nihalani",
     role: "Co-Founder & CTO",
-    bio: "Mr. Hitesh Nihlani is the Co-Founder and Chief Technical Officer (CTO) of Bytespath Solutions, responsible for steering the company’s financial strategy, planning, and growth initiatives. With a strong focus on financial discipline, strategic investment, and sustainable growth, Hitesh ensures that Bytespath maintains a robust and scalable business model. He plays a pivotal role in financial planning, managing budgets, and investor relations, enabling the company to achieve its growth objectives while maintaining operational efficiency and sound governance.",
+    bio: "Mr. Hitesh Nihalani is the Co-Founder and Chief Technology Officer (CTO) of Bytespath Solutions, leading the company's technology vision, product innovation, and engineering strategy. He oversees the design and development of scalable digital solutions, ensuring the adoption of modern technologies and best engineering practices. With a strong focus on innovation, system architecture, and technical excellence, Hitesh drives the development of secure, high-performance solutions that empower businesses across the BFSI sector while fostering a culture of continuous learning and technological advancement.",
     image: `${import.meta.env.BASE_URL}hitesh.jpeg`,
   },
   {
@@ -197,24 +197,24 @@ function About() {
                   Our Global <span className="text-gradient">Footprint</span>
                 </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed font-light mb-12 max-w-lg">
-                  Headquartered in Austin, with deep roots and operations in Mumbai, we serve the world's most demanding BFSI markets.
+                  Headquartered in Mumbai, with operations in Austin, we serve the world's most demanding BFSI markets.
                 </p>
                 
                 <div className="space-y-10 mb-16">
                   <div className="group">
                     <div className="flex items-center gap-4 mb-2">
                        <MapPin className="h-5 w-5 text-primary" />
-                       <h4 className="font-display text-2xl font-semibold">Austin, Texas</h4>
-                    </div>
-                    <p className="text-muted-foreground pl-9">Strategic Headquarters & USA Operations</p>
-                  </div>
-                  <div className="group">
-                    <div className="flex items-center gap-4 mb-2">
-                       <MapPin className="h-5 w-5 text-primary" />
                        <h4 className="font-display text-2xl font-semibold">Mumbai, India</h4>
                     </div>
-                    <p className="text-muted-foreground pl-9">Engineering Excellence Center & India Operations</p>
+                    <p className="text-muted-foreground pl-9">Headquaters, Engineering Excellence Center & India Operations</p>
                   </div>
+                  <div className="group">
+                  <div className="flex items-center gap-4 mb-2">
+                  <MapPin className="h-5 w-5 text-primary" />
+                  <h4 className="font-display text-2xl font-semibold">Austin, Texas</h4>
+                   </div>
+                   <p className="text-muted-foreground pl-9">USA Operations</p>
+                    </div>
                 </div>
 
                 <div className="flex gap-16 md:gap-24 border-t border-white/5 pt-12">
@@ -274,7 +274,7 @@ function About() {
                 Join the leading financial institutions already partnering with Bytespath for secure AI implementation.
               </p>
               <div className="mt-12">
-                <Link to="/contact" className="btn-primary !py-6 !px-16 text-xl">Book Consultation</Link>
+                <Link to="/contact" className="btn-primary !py-3 !px-10 text-xl">Book Consultation</Link>
               </div>
             </div>
           </div>
